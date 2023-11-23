@@ -18,11 +18,13 @@ body {
 }
 
 .navbar {
-    width: 70rem;
+    width: 90rem;
     height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: .3rem .3rem .3rem #aaa;
+    border-radius: .5rem;
 }
 
 .navbar-link {
@@ -34,31 +36,56 @@ body {
     justify-content: center;
     padding-bottom: 1rem;
     position: relative;
+    transition: border-radius .2s;
+    overflow: hidden;
+}
+
+.navbar-link:first-child {
+    pointer-events: none;
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.navbar-link:last-child {
+    pointer-events: none;
+    border-radius: 0 .5rem .5rem 0;
 }
 
 .change.navbar-link {
     background-color: rgb(185, 197, 147);
 }
 
+.navbar-link.prevElChange {
+    border-top-right-radius: 1.3rem;
+    transition: border-radius .45s;
+}
+
+.navbar-link.nextElChange {
+    border-top-left-radius: 1.3rem;
+    transition: border-radius .45s;
+}
+
 .navbar-link::before {
     content: '';
     position: absolute;
-    width: 10rem;
+    width: 10.4rem;
     height: 8rem;
     border-radius: 0 0 5rem 5rem;
     background-color: rgb(191, 248, 266);
     top: -100%;
-    left: 0;
+    left: -.2rem;
     transform-origin: center;
+    transition: top .4s, background-color .4s .4s;
 }
 
 .change.navbar-link::before {
     top: -30%;
+    transition: top .2s;
 }
 
 .navbar-link i {
     font-size: 2.5rem;
     color: #333;
+    transition: color .4s, font-size .4s;
 }
 
 .change.navbar-link i {
