@@ -36,6 +36,10 @@ body {
     position: relative;
 }
 
+.change.navbar-link {
+    background-color: rgb(185, 197, 147);
+}
+
 .navbar-link::before {
     content: '';
     position: absolute;
@@ -48,7 +52,16 @@ body {
     transform-origin: center;
 }
 
+.change.navbar-link::before {
+    top: -30%;
+}
+
 .navbar-link i {
     font-size: 2.5rem;
     color: #333;
+}
+
+.change.navbar-link i {
+    color: #fff;
+    font-size: 3.5rem;
 }
